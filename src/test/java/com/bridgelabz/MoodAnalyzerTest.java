@@ -31,9 +31,24 @@ public class MoodAnalyzerTest {
 
 	@Test
 	//to test null value
-	public void nullInput() {
+	public void testNullInput() {
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
-		String mood = moodAnalyzer.analyzeMood();
-		Assert.assertEquals("Happy", mood);
+		try {
+			String mood = moodAnalyzer.analyzeMood();
+		}catch(MoodAnalyzerException e) {
+			Assert.assertEquals(MoodAnalyzerException.ExceptionType.NULL, e.type);
+		}
+	}
+
+	@Test
+	//To test empty value
+	public void testEmptyInput(){
+		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("");
+		try{
+			String mood = moodAnalyzer.analyzeMood();
+		}catch (MoodAnalyzerException e){
+			Assert.assertEquals(MoodAnalyzerException.ExceptionType.EMPTY,e.type);
+		}
 	}
 }
+
