@@ -5,33 +5,33 @@ import org.junit.Test;
 
 public class MoodAnalyzerTest {
 
-	@Test
 	//To test sad mood
-	public void testSadMood(){
+	@Test
+	public void givenMood_whenSadMood_shouldReturnSad(){
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in Sad Mood");
 		String mood = moodAnalyzer.analyzeMood();
 		Assert.assertEquals("SAD", mood);
 	}
 
-	@Test
 	//to test happy mood
-	public void testHappyMood(){
+	@Test
+	public void givenMood_whenHappyMood_shouldReturnHappy(){
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in Happy Mood");
 		String mood = moodAnalyzer.analyzeMood();
 		Assert.assertEquals("HAPPY", mood);
 	}
 
-	@Test
 	//to test any mood
-	public void testAnyMood() {
+	@Test
+	public void givenMood_whenAnyMood_shouldReturnHappy() {
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in any Mood");
 		String mood = moodAnalyzer.analyzeMood();
 		Assert.assertEquals("HAPPY", mood);
 	}
 
-	@Test
 	//to test null value
-	public void testNullInput() {
+	@Test
+	public void givenMood_whenNull_shouldReturnHappy() {
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
 		try {
 			String mood = moodAnalyzer.analyzeMood();
@@ -40,9 +40,9 @@ public class MoodAnalyzerTest {
 		}
 	}
 
-	@Test
 	//To test empty value
-	public void testEmptyInput(){
+	@Test
+	public void givenMood_whenEmpty_shouldReturnEmptyMood(){
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("");
 		try{
 			String mood = moodAnalyzer.analyzeMood();
